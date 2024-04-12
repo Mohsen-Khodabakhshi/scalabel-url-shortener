@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "scalabel-url-shortener"
+version = "0.1.0"
+description = "Scalabel URL shortener like TinyURL"
+authors = ["Mohsen Khodabakhshi <mim.khodabakhshi@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "3.11.8"
+pre-commit = "^3.7.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
