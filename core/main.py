@@ -2,7 +2,9 @@ from fastapi import FastAPI
 
 from core import events
 
-app = FastAPI()
+from helper.responses import Response, Message
+
+app = FastAPI(default_response_class=Response)
 
 
 @app.on_event("startup")
@@ -13,3 +15,8 @@ async def startup_event() -> None:
 @app.on_event("shutdown")
 async def shutdown_event() -> None:
     await events.shutdown_event_handler(app)
+
+
+@app.get("/health", response_model=Message)
+async def ping_pong():
+    return Message(message="It's ok.")
