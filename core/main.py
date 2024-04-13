@@ -18,5 +18,5 @@ async def shutdown_event() -> None:
 
 
 @app.get("/health", response_model=Message)
-async def ping_pong():
+async def health():
     return Message(message="It's ok.")
